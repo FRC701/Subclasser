@@ -21,6 +21,8 @@ void ArmMove::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void ArmMove::Execute() {
   std::cout << "ArmMove::Execute" << std::endl;
+  double param = GetParam();
+  std::cout << "ArmMove::Execute: Param:" << param << std::endl;
 }
 
 // Called once the command ends or is interrupted.
@@ -32,3 +34,10 @@ void ArmMove::End(bool interrupted) {
 bool ArmMove::IsFinished() {
   return false;
 }
+
+double ArmMove::GetParam()
+{
+  std::cout << "ArmMove::GetParam" << std::endl;
+  return 8.8;
+}
+

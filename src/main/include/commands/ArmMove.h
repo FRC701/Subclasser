@@ -29,6 +29,7 @@ class ArmMove
 
   bool IsFinished() override;
 
-private:
+protected:
+  virtual double GetParam();
   Arm& mArm;
 };
