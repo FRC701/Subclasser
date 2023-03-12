@@ -10,10 +10,12 @@
 #include "commands/Autos.h"
 #include "commands/ExampleCommand.h"
 #include "commands/ArmMove.h"
+#include "commands/ArmMoveSub.h"
 
 RobotContainer::RobotContainer() {
   // Initialize all of your commands and subsystems here
    frc::SmartDashboard::PutData("Arm Move", new ArmMove(mArm));
+   frc::SmartDashboard::PutData("Arm Move Sub", new ArmMoveSub(mArm));
 
   // Configure the button bindings
   ConfigureBindings();
