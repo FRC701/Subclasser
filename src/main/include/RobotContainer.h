@@ -4,13 +4,10 @@
 
 #pragma once
 
-#include <frc2/command/CommandPtr.h>
 #include <frc2/command/button/CommandJoystick.h>
 #include <frc2/command/button/CommandXboxController.h>
 
 #include "Constants.h"
-
-#include "commands/ArmMoveSub.h"
 
 #include "subsystems/Arm.h"
 #include "subsystems/ExampleSubsystem.h"
@@ -45,8 +42,6 @@ class RobotContainer {
   // The robot's subsystems are defined here...
   Arm mArm;
   ExampleSubsystem m_subsystem;
-
-  ArmMoveSub mArmMoveSubCommand;
 
   void ConfigureBindings();
 };
