@@ -7,6 +7,8 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 
+#include "subsystems/Arm.h"
+
 /**
  * An example command.
  *
@@ -17,7 +19,7 @@
 class ArmMove
     : public frc2::CommandHelper<frc2::CommandBase, ArmMove> {
  public:
-  ArmMove();
+  ArmMove(Arm& arm);
 
   void Initialize() override;
 
@@ -26,4 +28,7 @@ class ArmMove
   void End(bool interrupted) override;
 
   bool IsFinished() override;
+
+private:
+  Arm& mArm;
 };

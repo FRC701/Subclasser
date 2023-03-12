@@ -5,12 +5,15 @@
 #include "RobotContainer.h"
 
 #include <frc2/command/button/Trigger.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 #include "commands/Autos.h"
 #include "commands/ExampleCommand.h"
+#include "commands/ArmMove.h"
 
 RobotContainer::RobotContainer() {
   // Initialize all of your commands and subsystems here
+   frc::SmartDashboard::PutData("Arm Move", new ArmMove(mArm));
 
   // Configure the button bindings
   ConfigureBindings();
