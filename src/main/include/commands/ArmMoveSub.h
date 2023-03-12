@@ -12,6 +12,12 @@ class ArmMoveSub : public ArmMove {
 
   void Initialize() override;
 
+  frc2::CommandPtr ToPtr() && override;
+
 protected:
   double GetParam() override;
+
+  std::unique_ptr<Command> TransferOwnership() && override;
+
+  virtual std::unique_ptr<ArmMoveSub> make_unique();
 };

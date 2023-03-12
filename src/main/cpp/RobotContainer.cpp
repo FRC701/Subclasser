@@ -34,9 +34,9 @@ void RobotContainer::ConfigureBindings() {
     // m_driverController.B().WhileTrue(m_subsystem.ExampleMethodCommand());
 
     button11.ToggleOnTrue(ArmMove(mArm).ToPtr());
-    button12.ToggleOnTrue(frc2::CommandPtr(std::make_unique<ArmMoveSub>(mArm)));
+    // button12.ToggleOnTrue(frc2::CommandPtr(std::make_unique<ArmMoveSub>(mArm)));
     // button12.ToggleOnTrue(&mArmMoveSubCommand);
-    // button12.ToggleOnTrue(ArmMoveSub(mArm).ToPtr());
+    button12.ToggleOnTrue(ArmMoveSub(mArm).ToPtr());
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand() {
