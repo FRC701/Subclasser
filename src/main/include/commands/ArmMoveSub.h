@@ -11,4 +11,7 @@ class ArmMoveSub : public ArmMove {
   ArmMoveSub(Arm& arm);
 
   void Initialize() override;
+
+protected:
+  double GetParam() override;
 };

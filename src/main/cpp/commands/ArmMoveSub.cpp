@@ -15,3 +15,9 @@ void ArmMoveSub::Initialize() {
   ArmMove::Initialize();
   std::cout << "ArmMoveSub::Initialize" << std::endl;
 }
+
+double ArmMoveSub::GetParam()
+{
+  std::cout << "ArmMoveSub::GetParam" << std::endl;
+  return 3.1415;
+}
