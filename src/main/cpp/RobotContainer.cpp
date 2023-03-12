@@ -12,7 +12,9 @@
 #include "commands/ArmMove.h"
 #include "commands/ArmMoveSub.h"
 
-RobotContainer::RobotContainer() {
+RobotContainer::RobotContainer() 
+: mArmMoveSubCommand(mArm)
+{
   // Initialize all of your commands and subsystems here
    frc::SmartDashboard::PutData("Arm Move", new ArmMove(mArm));
    frc::SmartDashboard::PutData("Arm Move Sub", new ArmMoveSub(mArm));
@@ -33,7 +35,8 @@ void RobotContainer::ConfigureBindings() {
     // m_driverController.B().WhileTrue(m_subsystem.ExampleMethodCommand());
 
     button11.ToggleOnTrue(ArmMove(mArm).ToPtr());
-    button12.ToggleOnTrue(ArmMoveSub(mArm).ToPtr());
+    button12.ToggleOnTrue(&mArmMoveSubCommand);
+    // button12.ToggleOnTrue(ArmMoveSub(mArm).ToPtr());
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand() {
